@@ -5,7 +5,6 @@
 //  Created by Sierra Morgan on 7/17/17.
 //
 
-import Foundation
 import UIKit
 
 class StyledViewController : UIViewController {
