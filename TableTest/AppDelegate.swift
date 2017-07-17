@@ -13,10 +13,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var flow:MainFlowController?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if let nav = window!.rootViewController as? UINavigationController
+        {
+            if let appLandingPage = nav.topViewController as? AppLandingPageViewController
+            {
+                flow = MainFlowController.init(nav, appLanding: appLandingPage)
+            }
+        }
+        
         return true
     }
 

@@ -7,3 +7,17 @@
 //
 
 import Foundation
+import UIKit
+
+class MainFlowController {
+    let navigationController: UINavigationController
+    let appLandingPageController: AppLandingPageViewController
+    
+    init(_ nav:UINavigationController, appLanding:AppLandingPageViewController)
+    {
+        navigationController = nav
+        appLandingPageController = appLanding
+        
+    }
+    
+}

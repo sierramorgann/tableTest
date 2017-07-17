@@ -11,6 +11,8 @@
 		BE4522971F1D19020096D8DB /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4522961F1D19020096D8DB /* SlideViewController.swift */; };
 		BE45229C1F1D5A9E0096D8DB /* StyledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45229B1F1D5A9E0096D8DB /* StyledViewController.swift */; };
 		BE45229F1F1D5BA50096D8DB /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45229E1F1D5BA50096D8DB /* MainFlowController.swift */; };
+		BE4522A11F1D5D590096D8DB /* AppLandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4522A01F1D5D590096D8DB /* AppLandingPageViewController.swift */; };
+		BE4522A31F1D5E510096D8DB /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4522A21F1D5E510096D8DB /* NavigationViewController.swift */; };
 		BE9862C11F1D0EFA001C4697 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9862C01F1D0EFA001C4697 /* AppDelegate.swift */; };
 		BE9862C31F1D0EFA001C4697 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9862C21F1D0EFA001C4697 /* ViewController.swift */; };
 		BE9862C61F1D0EFA001C4697 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9862C41F1D0EFA001C4697 /* Main.storyboard */; };
@@ -42,6 +44,8 @@
 		BE4522961F1D19020096D8DB /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		BE45229B1F1D5A9E0096D8DB /* StyledViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledViewController.swift; sourceTree = "<group>"; };
 		BE45229E1F1D5BA50096D8DB /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
+		BE4522A01F1D5D590096D8DB /* AppLandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLandingPageViewController.swift; sourceTree = "<group>"; };
+		BE4522A21F1D5E510096D8DB /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		BE9862BD1F1D0EFA001C4697 /* TableTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9862C01F1D0EFA001C4697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE9862C21F1D0EFA001C4697 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				BE45229E1F1D5BA50096D8DB /* MainFlowController.swift */,
+				BE4522A01F1D5D590096D8DB /* AppLandingPageViewController.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 				BE9862C71F1D0EFA001C4697 /* Assets.xcassets */,
 				BE9862C91F1D0EFA001C4697 /* LaunchScreen.storyboard */,
 				BE4522961F1D19020096D8DB /* SlideViewController.swift */,
+				BE4522A21F1D5E510096D8DB /* NavigationViewController.swift */,
 				BE9862CC1F1D0EFA001C4697 /* Info.plist */,
 				BE45229D1F1D5B8B0096D8DB /* Flow */,
 				BE45229A1F1D5A980096D8DB /* Components */,
@@ -337,7 +343,9 @@
 				BE9862C31F1D0EFA001C4697 /* ViewController.swift in Sources */,
 				BE45229C1F1D5A9E0096D8DB /* StyledViewController.swift in Sources */,
 				BE9862C11F1D0EFA001C4697 /* AppDelegate.swift in Sources */,
+				BE4522A11F1D5D590096D8DB /* AppLandingPageViewController.swift in Sources */,
 				BE45229F1F1D5BA50096D8DB /* MainFlowController.swift in Sources */,
+				BE4522A31F1D5E510096D8DB /* NavigationViewController.swift in Sources */,
 				BE4522971F1D19020096D8DB /* SlideViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
