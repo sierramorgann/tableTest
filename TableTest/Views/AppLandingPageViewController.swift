@@ -10,4 +10,15 @@ import UIKit
 
 class AppLandingPageViewController : SlideViewController {
     
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+            setUpTable()
+        }
+    
+        func setUpTable() {
+            
+        }
 }
+
