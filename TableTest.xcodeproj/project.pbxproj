@@ -14,12 +14,12 @@
 		BE4522A31F1D5E510096D8DB /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4522A21F1D5E510096D8DB /* NavigationViewController.swift */; };
 		BE4522A61F1D6E880096D8DB /* AppLandingPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4522A51F1D6E880096D8DB /* AppLandingPageViewController.xib */; };
 		BE4522A91F1E56970096D8DB /* UserInputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4522A81F1E56970096D8DB /* UserInputData.swift */; };
-		BE4522AB1F1E73DA0096D8DB /* StyledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4522AA1F1E73DA0096D8DB /* StyledViewController.swift */; };
 		BE9862C11F1D0EFA001C4697 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9862C01F1D0EFA001C4697 /* AppDelegate.swift */; };
 		BE9862C31F1D0EFA001C4697 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9862C21F1D0EFA001C4697 /* ViewController.swift */; };
 		BE9862C61F1D0EFA001C4697 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9862C41F1D0EFA001C4697 /* Main.storyboard */; };
 		BE9862C81F1D0EFA001C4697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE9862C71F1D0EFA001C4697 /* Assets.xcassets */; };
 		BE9862CB1F1D0EFA001C4697 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9862C91F1D0EFA001C4697 /* LaunchScreen.storyboard */; };
+		BEF605851F1E76E1007202C9 /* StyledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF605841F1E76E1007202C9 /* StyledViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,6 @@
 		BE4522A21F1D5E510096D8DB /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		BE4522A51F1D6E880096D8DB /* AppLandingPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppLandingPageViewController.xib; sourceTree = "<group>"; };
 		BE4522A81F1E56970096D8DB /* UserInputData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputData.swift; sourceTree = "<group>"; };
-		BE4522AA1F1E73DA0096D8DB /* StyledViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledViewController.swift; sourceTree = "<group>"; };
 		BE9862BD1F1D0EFA001C4697 /* TableTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9862C01F1D0EFA001C4697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE9862C21F1D0EFA001C4697 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		BE9862CC1F1D0EFA001C4697 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE9862D11F1D0EFA001C4697 /* TableTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9862DC1F1D0EFA001C4697 /* TableTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEF605841F1E76E1007202C9 /* StyledViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +107,7 @@
 		BE45229A1F1D5A980096D8DB /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				BE4522AA1F1E73DA0096D8DB /* StyledViewController.swift */,
+				BEF605841F1E76E1007202C9 /* StyledViewController.swift */,
 			);
 			name = Components;
 			path = ..;
@@ -365,7 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE9862C31F1D0EFA001C4697 /* ViewController.swift in Sources */,
-				BE4522AB1F1E73DA0096D8DB /* StyledViewController.swift in Sources */,
+				BEF605851F1E76E1007202C9 /* StyledViewController.swift in Sources */,
 				BE9862C11F1D0EFA001C4697 /* AppDelegate.swift in Sources */,
 				BE4522A11F1D5D590096D8DB /* AppLandingPageViewController.swift in Sources */,
 				BE45229F1F1D5BA50096D8DB /* MainFlowController.swift in Sources */,

@@ -10,7 +10,11 @@ import UIKit
 
 class AppLandingPageViewController : SlideViewController {
     
-    
+    @IBOutlet var homeScreenTable: UITableView!
+    @IBOutlet var addButton: UIBarButtonItem!
+    @IBAction func addButtonPressed(_ sender: Any) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

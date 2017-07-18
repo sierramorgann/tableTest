@@ -19,6 +19,13 @@ class UserData {
     
     init?(name: String, logo: UIImage?, shirtSize: String, phoneNumber: Int, email: String?, pricePaid: Int) {
         
+        guard !name.isEmpty || !shirtSize.isEmpty || !(email?.isEmpty)! else {
+            return nil
+        }
+        if phoneNumber < 0 || pricePaid < 0  {
+            return nil
+        }
+        
         self.name = name
         self.logo = logo
         self.shirtSize = shirtSize
@@ -26,9 +33,6 @@ class UserData {
         self.pricePaid = pricePaid
         self.email = email
         
-        if name.isEmpty || shirtSize.isEmpty || phoneNumber < 0 || pricePaid < 0  {
-            return nil
-        }
     }
     
 }
