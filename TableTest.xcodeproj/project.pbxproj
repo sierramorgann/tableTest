@@ -36,6 +36,8 @@
 		BEF7F98C1F1FF79A00F5FE71 /* InventoryTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEF7F98B1F1FF79A00F5FE71 /* InventoryTableViewController.xib */; };
 		BEF7F98E1F1FF85A00F5FE71 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7F98D1F1FF85A00F5FE71 /* OrdersViewController.swift */; };
 		BEF7F9901F1FF86100F5FE71 /* OrdersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEF7F98F1F1FF86100F5FE71 /* OrdersViewController.xib */; };
+		BEF7F9921F1FF8B300F5FE71 /* ProfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7F9911F1FF8B300F5FE71 /* ProfitViewController.swift */; };
+		BEF7F9941F1FF8CD00F5FE71 /* ProfitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEF7F9931F1FF8CD00F5FE71 /* ProfitViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		BEF7F98B1F1FF79A00F5FE71 /* InventoryTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryTableViewController.xib; sourceTree = "<group>"; };
 		BEF7F98D1F1FF85A00F5FE71 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		BEF7F98F1F1FF86100F5FE71 /* OrdersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrdersViewController.xib; sourceTree = "<group>"; };
+		BEF7F9911F1FF8B300F5FE71 /* ProfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitViewController.swift; sourceTree = "<group>"; };
+		BEF7F9931F1FF8CD00F5FE71 /* ProfitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfitViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,9 +256,11 @@
 				BEF7F9811F1FF74A00F5FE71 /* InventoryTableViewController.swift */,
 				BEF7F9831F1FF75B00F5FE71 /* InventoryViewController.swift */,
 				BEF7F9851F1FF77500F5FE71 /* AddInventoryViewController.swift */,
+				BEF7F9911F1FF8B300F5FE71 /* ProfitViewController.swift */,
 				BEF7F98B1F1FF79A00F5FE71 /* InventoryTableViewController.xib */,
 				BEF7F9891F1FF79100F5FE71 /* InventoryViewController.xib */,
 				BEF7F9871F1FF78500F5FE71 /* AddInventoryViewController.xib */,
+				BEF7F9931F1FF8CD00F5FE71 /* ProfitViewController.xib */,
 			);
 			path = Inventory;
 			sourceTree = "<group>";
@@ -374,6 +380,7 @@
 				BEF7F9881F1FF78500F5FE71 /* AddInventoryViewController.xib in Resources */,
 				BEF7F9731F1FDD5F00F5FE71 /* AddOrderViewController.xib in Resources */,
 				BE9862C81F1D0EFA001C4697 /* Assets.xcassets in Resources */,
+				BEF7F9941F1FF8CD00F5FE71 /* ProfitViewController.xib in Resources */,
 				BE4522A61F1D6E880096D8DB /* OrdersTableViewController.xib in Resources */,
 				BE9862C61F1D0EFA001C4697 /* Main.storyboard in Resources */,
 				BEF7F9761F1FDEBF00F5FE71 /* OrdersCellViewController.xib in Resources */,
@@ -457,6 +464,7 @@
 				BEF7F96F1F1FCEB200F5FE71 /* InventoryDataStore.swift in Sources */,
 				BEF7F97E1F1FEE9C00F5FE71 /* InventoryFlowController.swift in Sources */,
 				BEF7F9841F1FF75B00F5FE71 /* InventoryViewController.swift in Sources */,
+				BEF7F9921F1FF8B300F5FE71 /* ProfitViewController.swift in Sources */,
 				BE9862C11F1D0EFA001C4697 /* AppDelegate.swift in Sources */,
 				BE4522A11F1D5D590096D8DB /* OrdersTableViewController.swift in Sources */,
 				BE45229F1F1D5BA50096D8DB /* MainFlowController.swift in Sources */,
