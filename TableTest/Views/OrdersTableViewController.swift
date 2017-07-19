@@ -29,7 +29,7 @@ class AppLandingPageViewController : SlideViewController {
         }
     
         func setUpTable() {
-            self.tableView.register(UINib(nibName: "AppLandingPageViewController", bundle: nil), forCellReuseIdentifier: "AppLanding")
+            self.tableView.register(UINib(nibName: "OrdersCellViewController", bundle: nil), forCellReuseIdentifier: "Orders")
             
             self.tableView.dataSource = self
             
@@ -42,9 +42,9 @@ class AppLandingPageViewController : SlideViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func configureCell(_ cell:ProjectTableViewCell, project:Project)
+    func configureCell(_ cell:OrdersCellViewController, orders:Orders)
     {
-        
+        cell.titleLabel.text = orders.title
     }
 }
 

@@ -9,5 +9,6 @@
 import UIKit
 
 class OrdersCellViewController : UITableViewCell {
-    
+    @IBOutlet var logoImg:UIImageView?
+    @IBOutlet var name:UILabel!
 }
