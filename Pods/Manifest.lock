@@ -1,3 +1,14 @@
-PODFILE CHECKSUM: 571b32313aaeb5b9ae42348fa2a494d39cc3b33a
+PODS:
+  - Cadmium (1.1.0):
+    - Cadmium/Core (= 1.1.0)
+  - Cadmium/Core (1.1.0)
+
+DEPENDENCIES:
+  - Cadmium
+
+SPEC CHECKSUMS:
+  Cadmium: 7536de164867a1498152e93cc2b19264fbe98fd9
+
+PODFILE CHECKSUM: ab9a694765baaa2d7278da1d604d6b0fb208a010
 
 COCOAPODS: 1.2.1

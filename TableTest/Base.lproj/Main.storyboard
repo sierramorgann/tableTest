@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="v9i-Qk-28Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,49 +13,73 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="AppLandingPageViewController" customModule="TableTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="view" contentMode="scaleToFill" id="0hj-Hd-LJw">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="tXg-XP-uCA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                        <items>
-                            <navigationItem title="Title" id="knc-4z-k0W"/>
-                        </items>
-                    </navigationBar>
-                    <navigationItem key="navigationItem" id="oyz-uy-QHk">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="WaA-kK-wNc">
-                            <connections>
-                                <action selector="addButton:" destination="BYZ-38-t0r" id="L62-D5-imk"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="4Gh-oK-AvL">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Title" id="hVu-Cd-bjg">
+                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gbd-9p-1tw">
+                                        <connections>
+                                            <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="2mC-4O-fUv"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                    </tableView>
+                    <connections>
+                        <outlet property="addButton" destination="Gbd-9p-1tw" id="tk6-eT-nT1"/>
+                        <outlet property="homeScreenTable" destination="tXg-XP-uCA" id="Bjo-VX-NAE"/>
+                        <outlet property="tableView" destination="tXg-XP-uCA" id="SXO-CP-5iI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-145" y="-340"/>
+            <point key="canvasLocation" x="-146" y="121"/>
         </scene>
-        <!--Navigation View Controller-->
-        <scene sceneID="3d9-b2-iPL">
+        <!--Navigation Controller-->
+        <scene sceneID="Uqp-Tv-zge">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v9i-Qk-28Y" customClass="NavigationViewController" customModule="TableTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ddx-0s-Tgn">
+                <navigationController id="tvC-RB-aL5" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KLm-4w-gO3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <nil name="viewControllers"/>
+                    <viewControllers>
+                        <tableViewController id="0LF-AC-VNq">
+                            <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="04M-5q-WMk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="z7o-8O-8jd">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z7o-8O-8jd" id="daM-Bs-TpI">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <navigationItem key="navigationItem" title="Root View Controller" id="55L-kf-l6Z"/>
+                        </tableViewController>
+                    </viewControllers>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2ys-j9-fHF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationBar contentMode="scaleToFill" id="eI9-6b-KGD">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qSR-dL-gk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationBar contentMode="scaleToFill" id="QIA-3H-q3v">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <items>
-                        <navigationItem title="Title" id="H1d-YS-CkF"/>
+                        <navigationItem title="Title" id="WOG-mf-nvo"/>
                     </items>
                 </navigationBar>
-                <navigationItem id="N8X-Rr-uMz">
-                    <barButtonItem key="rightBarButtonItem" title="Edit" style="plain" id="t2r-xo-1aS"/>
-                </navigationItem>
             </objects>
-            <point key="canvasLocation" x="-145" y="121"/>
+            <point key="canvasLocation" x="518" y="121"/>
         </scene>
     </scenes>
 </document>
