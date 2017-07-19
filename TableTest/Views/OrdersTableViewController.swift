@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Cadmium
 
 class AppLandingPageViewController : SlideViewController {
     
@@ -15,24 +16,35 @@ class AppLandingPageViewController : SlideViewController {
     @IBOutlet var addButton: UIBarButtonItem!
     @IBAction func addButtonPressed(_ sender: Any) {
         
+        
     }
+    
+    var names: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
             setUpTable()
+        
+            tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         }
     
         func setUpTable() {
-            self.tableView.register(UINib(nibName: "ProjectTableViewCell", bundle: nil), forCellReuseIdentifier: "project")
+            self.tableView.register(UINib(nibName: "AppLandingPageViewController", bundle: nil), forCellReuseIdentifier: "AppLanding")
             
             self.tableView.dataSource = self
             
             self.tableView.delegate = self as? UITableViewDelegate
         }
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func configureCell(_ cell:ProjectTableViewCell, project:Project)
+    {
+        
     }
 }
 
@@ -41,13 +53,21 @@ extension AppLandingPageViewController : UITabBarDelegate {
 }
 
 extension AppLandingPageViewController : UITableViewDataSource {
+    
+    //return the number of rows in the table based off data
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
+        return names.count
+    }
+    //dequeues table view cells and populates them with the corresponding string from the names array
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-            let cell =
-                tableView.dequeueReusableCell(withIdentifier: "Cell",
-                                              for: indexPath)
-            cell.textLabel?.text = names[indexPath.row]
-            return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = names[indexPath.row]
+        
+        return cell
     }
+    
+    
 }
 

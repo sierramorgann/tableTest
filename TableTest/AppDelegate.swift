@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Cadmium
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
