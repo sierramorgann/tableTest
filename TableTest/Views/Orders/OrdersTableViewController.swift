@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import Cadmium
 
-class AppLandingPageViewController : SlideViewController {
+class OrdersTableViewController : SlideViewController {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var addButton: UIBarButtonItem!

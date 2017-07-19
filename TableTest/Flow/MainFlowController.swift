@@ -8,9 +8,11 @@
 
 import UIKit
 
-protocol slide {
-    
+protocol Slide
+{
+    var didCompleteAction:(() -> Void)? {get set}
 }
+
 class ScreenFactory {
     
     //creates the View Controller when it needs to be loaded by the navigation controller
@@ -71,5 +73,41 @@ InventoryFlow
  5. Profit Overview
  
  */
+
+class MainFlowController
+{
+    let navigationController:UINavigationController
+    let ordersController:OrdersTableViewController
+    
+    let ordersFlow:OrdersCellViewController
+    let inventoryFlow:InventoryFlowController
+    
+    let screenFactory:ScreenFactory = ScreenFactory()
+    
+    init(_ nav:UINavigationController, orders:OrdersTableViewController){
+        navigationController = nav
+        ordersController = orders
+    }
+}
+
+enum ScreenControllerNibNames : String
+{
+    case OrdersTableViewController
+    case AddOrderViewController
+    case OrderViewController
+    case InventoryTableViewController
+    case AddInventoryViewController
+    case InventoryViewController
+    case ProfitViewController
+    
+}
+
+let DefaultScreenNibToClassAssociations:Dictionary
+
+
+
+
+
+
 
 
