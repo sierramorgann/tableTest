@@ -63,4 +63,30 @@ class InventoryState : NSObject {
         }
         return nil
     }
+    
+    func retrieveOrder(_ identifier:NSString) -> Order?
+    {
+        do {
+            if let order = try Cd.objectWithID(Orders.self, idValue: identifier, key: "identifier")
+            {
+                return order
+            }
+        } catch let error {
+            print("couldn't retrieve  project with identifier (\(identifier)) error:\(error)")
+        }
+        return nil
+    }
+    
+    func retrieveInventory(_ identifier:NSString) -> Inventory?
+    {
+        do {
+            if let inventory = try Cd.objectWithID(Inventory.self, idValue: identifier, key: "identifier")
+            {
+                return inventory
+            }
+        } catch let error {
+            print("couldn't retrieve active waiver with identifier (\(identifier)) error:\(error)")
+        }
+        return nil
+    }
 }

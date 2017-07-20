@@ -11,21 +11,59 @@ import CoreData
 import Cadmium
 
 class OrdersTableViewController : SlideViewController {
+    @IBOutlet var editButton:UIBarButtonItem!
+    @IBOutlet var tableView:UITableView!
     
-    @IBOutlet var tableView: UITableView!
-    @IBOutlet var addButton: UIBarButtonItem!
-    @IBAction func addButtonPressed(_ sender: Any) {
-        
-        
+    var results:NSFetchedResultsController<Cadmium.CdManagedObject>?
+    var lastSelectedIndexPath:IndexPath?
+    
+    //all methods that would cause navigation to change, so that flowController can hook into them
+    public var addOrderBlock: (() -> Void)?
+    public var enterOrderBlock: (() -> Void)?
+    
+    
+    @IBAction func addPressed(_ sender: Any)
+    {
+        if let addOrder = addOrderBlock
+        {
+            addOrder()
+        }
     }
     
-    var names: [String] = []
+    @IBAction func editButtonPressed() {
+        
+       toggleEditingMode()
+    }
+    
+    func toggleEditingMode()
+    {
+        self.tableView.isEditing = !self.tableView.isEditing
+        
+        if self.tableView.isEditing
+        {
+            editButton.title = "Done"
+            
+        } else {
+            editButton.title = "Edit"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            setUpTable()
         
-            tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        // Do any additional setup after loading the view, typically from a nib.
+        results = InventoryDataStore.sharedInstance.allInventoryController()
+//        results?.delegate = self
+        
+        do {
+            try results?.performFetch()
+        } catch let error
+        {
+            NSLog("error getting results delegate fetch:\(error)")
+        }
+        
+        setUpTable()
+        
         }
     
         func setUpTable() {
@@ -36,39 +74,81 @@ class OrdersTableViewController : SlideViewController {
             self.tableView.delegate = self as? UITableViewDelegate
         }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func configureCell(_ cell:OrdersCellViewController, orders:Orders)
+    func configureCell(_ cell:OrdersCellViewController, orders:Order)
     {
         cell.titleLabel.text = orders.title
         
-        if orders ==
+        if orders == InventoryState.sharedInstance.retrieveActiveOrder()
+        {
+            //it's possible the cell wasn't selected properly -- ensure its selection
+            if let selectedPath = self.results?.indexPath(forObject: orders as Cadmium.CdManagedObject)
+            {
+                self.tableView.selectRow(at: selectedPath, animated: false, scrollPosition: .none)
+            }
+        } else {
+            cell.isSelected = false
+        }
     }
 }
 
-//extension OrdersTableViewController : UITabBarDelegate {
-//
-//}
-
-extension OrdersTableViewController : UITableViewDataSource {
-    
-    //return the number of rows in the table based off data
-    func tableView(_ tableView: UITableView,
-                   numberOfRowsInSection section: Int) -> Int {
-        return names.count
+extension OrdersTableViewController : UITableViewDelegate
+{
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    {
+        if editingStyle == .delete
+        {
+            //deleteOrderWithCell(indexPath:indexPath)
+        }
     }
-    //dequeues table view cells and populates them with the corresponding string from the names array
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = names[indexPath.row]
-        
-        return cell
-    }
-    
 }
+
+extension OrdersTableViewController : NSFetchedResultsControllerDelegate
+{
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.endUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .delete:
+            self.tableView.deleteRows(at: [indexPath!], with: .left)
+            break
+            
+        case .insert:
+            self.tableView.insertRows(at: [newIndexPath!], with: .right)
+            break
+            
+        case .move:
+            self.tableView.moveRow(at: indexPath!, to: newIndexPath!)
+            
+            break
+            
+        case .update:
+            self.tableView.reloadRows(at: [indexPath!], with: .none)
+            break
+            
+        }
+    }
+}
+
+
 

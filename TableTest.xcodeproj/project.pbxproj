@@ -21,7 +21,6 @@
 		BE9862CB1F1D0EFA001C4697 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9862C91F1D0EFA001C4697 /* LaunchScreen.storyboard */; };
 		BEF605851F1E76E1007202C9 /* StyledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF605841F1E76E1007202C9 /* StyledViewController.swift */; };
 		BEF7F96D1F1FC0B400F5FE71 /* InventoryModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BEF7F96B1F1FC0B400F5FE71 /* InventoryModel.xcdatamodeld */; };
-		BEF7F96F1F1FCEB200F5FE71 /* InventoryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7F96E1F1FCEB200F5FE71 /* InventoryDataStore.swift */; };
 		BEF7F9711F1FDD4800F5FE71 /* AddOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7F9701F1FDD4800F5FE71 /* AddOrderViewController.swift */; };
 		BEF7F9731F1FDD5F00F5FE71 /* AddOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEF7F9721F1FDD5F00F5FE71 /* AddOrderViewController.xib */; };
 		BEF7F9761F1FDEBF00F5FE71 /* OrdersCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEF7F9751F1FDEBF00F5FE71 /* OrdersCellViewController.xib */; };
@@ -39,6 +38,7 @@
 		BEF7F9921F1FF8B300F5FE71 /* ProfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7F9911F1FF8B300F5FE71 /* ProfitViewController.swift */; };
 		BEF7F9941F1FF8CD00F5FE71 /* ProfitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEF7F9931F1FF8CD00F5FE71 /* ProfitViewController.xib */; };
 		BEF7F9961F210EC600F5FE71 /* InventoryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7F9951F210EC600F5FE71 /* InventoryState.swift */; };
+		BEF7F99A1F2134BE00F5FE71 /* InventoryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7F9991F2134BE00F5FE71 /* InventoryDataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +79,6 @@
 		BE9862DC1F1D0EFA001C4697 /* TableTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF605841F1E76E1007202C9 /* StyledViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledViewController.swift; sourceTree = "<group>"; };
 		BEF7F96C1F1FC0B400F5FE71 /* InventoryModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InventoryModel.xcdatamodel; sourceTree = "<group>"; };
-		BEF7F96E1F1FCEB200F5FE71 /* InventoryDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryDataStore.swift; sourceTree = "<group>"; };
 		BEF7F9701F1FDD4800F5FE71 /* AddOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewController.swift; sourceTree = "<group>"; };
 		BEF7F9721F1FDD5F00F5FE71 /* AddOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddOrderViewController.xib; sourceTree = "<group>"; };
 		BEF7F9751F1FDEBF00F5FE71 /* OrdersCellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrdersCellViewController.xib; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		BEF7F9911F1FF8B300F5FE71 /* ProfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitViewController.swift; sourceTree = "<group>"; };
 		BEF7F9931F1FF8CD00F5FE71 /* ProfitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfitViewController.xib; sourceTree = "<group>"; };
 		BEF7F9951F210EC600F5FE71 /* InventoryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryState.swift; sourceTree = "<group>"; };
+		BEF7F9991F2134BE00F5FE71 /* InventoryDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,12 +205,12 @@
 				BE9862C01F1D0EFA001C4697 /* AppDelegate.swift */,
 				BE9862C21F1D0EFA001C4697 /* ViewController.swift */,
 				BEF7F9951F210EC600F5FE71 /* InventoryState.swift */,
+				BEF7F9991F2134BE00F5FE71 /* InventoryDataStore.swift */,
 				BE9862C41F1D0EFA001C4697 /* Main.storyboard */,
 				BE9862C71F1D0EFA001C4697 /* Assets.xcassets */,
 				BE9862C91F1D0EFA001C4697 /* LaunchScreen.storyboard */,
 				BE4522961F1D19020096D8DB /* SlideViewController.swift */,
 				BE4522A21F1D5E510096D8DB /* NavigationViewController.swift */,
-				BEF7F96E1F1FCEB200F5FE71 /* InventoryDataStore.swift */,
 				BE9862CC1F1D0EFA001C4697 /* Info.plist */,
 				BE4522A41F1D6E590096D8DB /* Views */,
 				BEF7F9741F1FDE9C00F5FE71 /* Cell */,
@@ -464,7 +464,6 @@
 				BE9862C31F1D0EFA001C4697 /* ViewController.swift in Sources */,
 				BEF7F9711F1FDD4800F5FE71 /* AddOrderViewController.swift in Sources */,
 				BEF605851F1E76E1007202C9 /* StyledViewController.swift in Sources */,
-				BEF7F96F1F1FCEB200F5FE71 /* InventoryDataStore.swift in Sources */,
 				BEF7F97E1F1FEE9C00F5FE71 /* InventoryFlowController.swift in Sources */,
 				BEF7F9841F1FF75B00F5FE71 /* InventoryViewController.swift in Sources */,
 				BEF7F9921F1FF8B300F5FE71 /* ProfitViewController.swift in Sources */,
@@ -474,6 +473,7 @@
 				BEF7F9781F1FDED400F5FE71 /* OrdersCellViewController.swift in Sources */,
 				BE4522A31F1D5E510096D8DB /* NavigationViewController.swift in Sources */,
 				BEF7F97C1F1FEE8F00F5FE71 /* OrdersFlowController.swift in Sources */,
+				BEF7F99A1F2134BE00F5FE71 /* InventoryDataStore.swift in Sources */,
 				BEF7F9821F1FF74A00F5FE71 /* InventoryTableViewController.swift in Sources */,
 				BEF7F9961F210EC600F5FE71 /* InventoryState.swift in Sources */,
 				BEF7F98E1F1FF85A00F5FE71 /* OrdersViewController.swift in Sources */,

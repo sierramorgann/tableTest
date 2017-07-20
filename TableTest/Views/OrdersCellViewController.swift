@@ -12,5 +12,8 @@ class OrdersCellViewController : UITableViewCell {
     @IBOutlet var logoImg:UIImageView?
     @IBOutlet var name:UILabel!
     
-    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
 }
