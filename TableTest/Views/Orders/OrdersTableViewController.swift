@@ -29,7 +29,7 @@ class OrdersTableViewController : SlideViewController {
         }
     
         func setUpTable() {
-            self.tableView.register(UINib(nibName: "OrdersCellViewController", bundle: nil), forCellReuseIdentifier: "Orders")
+            self.tableView.register(UINib(nibName: "OrdersCellViewController", bundle: nil), forCellReuseIdentifier: "orders")
             
             self.tableView.dataSource = self
             
@@ -45,14 +45,16 @@ class OrdersTableViewController : SlideViewController {
     func configureCell(_ cell:OrdersCellViewController, orders:Orders)
     {
         cell.titleLabel.text = orders.title
+        
+        if orders ==
     }
 }
 
-extension AppLandingPageViewController : UITabBarDelegate {
-    
-}
+//extension OrdersTableViewController : UITabBarDelegate {
+//
+//}
 
-extension AppLandingPageViewController : UITableViewDataSource {
+extension OrdersTableViewController : UITableViewDataSource {
     
     //return the number of rows in the table based off data
     func tableView(_ tableView: UITableView,
@@ -67,7 +69,6 @@ extension AppLandingPageViewController : UITableViewDataSource {
         
         return cell
     }
-    
     
 }
 

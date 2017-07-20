@@ -8,6 +8,6 @@
 
 import UIKit
 
-class AddOrderViewController : UIViewController {
+class AddOrderViewController : SlideViewController {
     
 }

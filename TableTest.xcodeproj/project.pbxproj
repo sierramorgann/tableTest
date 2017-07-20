@@ -38,6 +38,7 @@
 		BEF7F9901F1FF86100F5FE71 /* OrdersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEF7F98F1F1FF86100F5FE71 /* OrdersViewController.xib */; };
 		BEF7F9921F1FF8B300F5FE71 /* ProfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7F9911F1FF8B300F5FE71 /* ProfitViewController.swift */; };
 		BEF7F9941F1FF8CD00F5FE71 /* ProfitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEF7F9931F1FF8CD00F5FE71 /* ProfitViewController.xib */; };
+		BEF7F9961F210EC600F5FE71 /* InventoryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7F9951F210EC600F5FE71 /* InventoryState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		BEF7F98F1F1FF86100F5FE71 /* OrdersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrdersViewController.xib; sourceTree = "<group>"; };
 		BEF7F9911F1FF8B300F5FE71 /* ProfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitViewController.swift; sourceTree = "<group>"; };
 		BEF7F9931F1FF8CD00F5FE71 /* ProfitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfitViewController.xib; sourceTree = "<group>"; };
+		BEF7F9951F210EC600F5FE71 /* InventoryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,8 +164,8 @@
 		BE4522A41F1D6E590096D8DB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BEF7F9801F1FF6F200F5FE71 /* Inventory */,
 				BEF7F97F1F1FF6E600F5FE71 /* Orders */,
+				BEF7F9801F1FF6F200F5FE71 /* Inventory */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,6 +204,7 @@
 			children = (
 				BE9862C01F1D0EFA001C4697 /* AppDelegate.swift */,
 				BE9862C21F1D0EFA001C4697 /* ViewController.swift */,
+				BEF7F9951F210EC600F5FE71 /* InventoryState.swift */,
 				BE9862C41F1D0EFA001C4697 /* Main.storyboard */,
 				BE9862C71F1D0EFA001C4697 /* Assets.xcassets */,
 				BE9862C91F1D0EFA001C4697 /* LaunchScreen.storyboard */,
@@ -472,6 +475,7 @@
 				BE4522A31F1D5E510096D8DB /* NavigationViewController.swift in Sources */,
 				BEF7F97C1F1FEE8F00F5FE71 /* OrdersFlowController.swift in Sources */,
 				BEF7F9821F1FF74A00F5FE71 /* InventoryTableViewController.swift in Sources */,
+				BEF7F9961F210EC600F5FE71 /* InventoryState.swift in Sources */,
 				BEF7F98E1F1FF85A00F5FE71 /* OrdersViewController.swift in Sources */,
 				BEF7F96D1F1FC0B400F5FE71 /* InventoryModel.xcdatamodeld in Sources */,
 				BE4522971F1D19020096D8DB /* SlideViewController.swift in Sources */,

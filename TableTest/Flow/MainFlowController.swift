@@ -33,7 +33,7 @@ class FlowController {
     let navigationController: UINavigationController
     let screenFactory:ScreenFactory
     
-    init(_ nav:UINavigationController, appLanding:OrdersTableViewController)
+    init(_ nav:UINavigationController, factory:ScreenFactory)
     {
         navigationController = nav
         screenFactory = factory
@@ -79,7 +79,7 @@ class MainFlowController
     let navigationController:UINavigationController
     let ordersController:OrdersTableViewController
     
-    let ordersFlow:OrdersCellViewController
+    let ordersFlow:OrdersFlowController
     let inventoryFlow:InventoryFlowController
     
     let screenFactory:ScreenFactory = ScreenFactory()
@@ -94,7 +94,7 @@ enum ScreenControllerNibNames : String
 {
     case OrdersTableViewController
     case AddOrderViewController
-    case OrderViewController
+    case OrdersViewController
     case InventoryTableViewController
     case AddInventoryViewController
     case InventoryViewController
@@ -102,7 +102,17 @@ enum ScreenControllerNibNames : String
     
 }
 
-let DefaultScreenNibToClassAssociations:Dictionary
+let DefaultScreenNibToClassAssociations:Dictionary<ScreenControllerNibNames,StyledViewController.Type> =
+    [
+        ScreenControllerNibNames.OrdersTableViewController : OrdersTableViewController.self,
+        ScreenControllerNibNames.AddOrderViewController : AddOrderViewController.self,
+        ScreenControllerNibNames.OrdersViewController : OrdersViewController.self,
+        ScreenControllerNibNames.InventoryTableViewController : InventoryTableViewController.self,
+        ScreenControllerNibNames.AddInventoryViewController : AddInventoryViewController.self,
+        ScreenControllerNibNames.InventoryViewController : InventoryViewController.self,
+        ScreenControllerNibNames.ProfitViewController : ProfitViewController.self
+        
+]
 
 
 

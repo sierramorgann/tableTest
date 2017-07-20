@@ -20,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let nav = window!.rootViewController as? UINavigationController
         {
-            if let appLandingPage = nav.topViewController as? AppLandingPageViewController
+            if let orders = nav.topViewController as? OrdersTableViewController
             {
-                flow = MainFlowController.init(nav, appLanding: appLandingPage)
+                flow = MainFlowController.init(nav, orders: orders)
             }
         }
         
