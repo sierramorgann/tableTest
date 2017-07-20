@@ -11,15 +11,15 @@ import Cadmium
 
 //This class will handle the inbetween conversation between data and UI interface
 
-class InventoryState : NSObject {
+class ProductState : NSObject {
     //recursion to call class
-    static let sharedInstance = InventoryState()
+    static let sharedInstance = ProductState()
     
     // set up variables to declare when a viewController is active i.e. is showing
     var activeOrdersIdentifier: String?
-    var activeInventoryIdentifier: String?
+    var activeProductIdentifier: String?
     
-    //call this instead of setting activeProject
+    //call this instead of setting activeOrder
     //It will handle auxiliary changes such as restoration information
     func configureNewActiveOrder(_ o: Order?) {
         
@@ -43,49 +43,49 @@ class InventoryState : NSObject {
         let defaults = UserDefaults.standard
         if let identifier = defaults.string(forKey: "order")
         {
-            if let order = retrieveOrders(identifier as NSString)
+            if let order = retrieveOrder(identifier as NSString)
             {
-                configureNewActiveOrders(order)
+                configureNewActiveOrder(order)
             }
         }
     }
     
-    func configureNewActiveInvetory(_ i:Inventory?)
+    func configureNewActiveInvetory(_ p:Product?)
     {
-        activeInventoryIdentifier = i?.identifier
+        activeProductIdentifier = p?.identifier
     }
     
     func retrieveActiveOrder() -> Order?
     {
         if let identifier = activeOrdersIdentifier
         {
-            return retrieveProject(identifier as NSString)
+            return retrieveOrder(identifier as NSString)
         }
         return nil
     }
     
-    func retrieveOrder(_ identifier:NSString) -> Order?
+    func retrieveOrder(_ identifier:NSString) -> OrderObj?
     {
         do {
-            if let order = try Cd.objectWithID(Orders.self, idValue: identifier, key: "identifier")
+            if let order = try Cd.objectWithID(OrderObj.self, idValue: identifier, key: "identifier")
             {
                 return order
             }
         } catch let error {
-            print("couldn't retrieve  project with identifier (\(identifier)) error:\(error)")
+            print("couldn't retrieve order with identifier (\(identifier)) error:\(error)")
         }
         return nil
     }
     
-    func retrieveInventory(_ identifier:NSString) -> Inventory?
+    func retrieveProduct(_ identifier:NSString) -> ProductObj?
     {
         do {
-            if let inventory = try Cd.objectWithID(Inventory.self, idValue: identifier, key: "identifier")
+            if let product = try Cd.objectWithID(ProductObj.self, idValue: identifier, key: "identifier")
             {
-                return inventory
+                return product
             }
         } catch let error {
-            print("couldn't retrieve active waiver with identifier (\(identifier)) error:\(error)")
+            print("couldn't retrieve active product with identifier (\(identifier)) error:\(error)")
         }
         return nil
     }

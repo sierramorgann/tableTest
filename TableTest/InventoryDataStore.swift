@@ -50,12 +50,56 @@ class InventoryDataStore {
     {
         return Cd.newFetchedResultsController(self.allOrdersRequest(), sectionNameKeyPath: nil, cacheName: nil)
     }
+    func InventoryForOrdersIdController(_ orderID:Int16) -> NSFetchedResultsController<Cadmium.CdManagedObject>
+    {
+        return Cd.newFetchedResultsController(self.InventoryRequest(orderID), sectionNameKeyPath: nil, cacheName: nil)
+    }
+    
+    func allObjectsController() -> NSFetchedResultsController<Cadmium.CdManagedObject>
+    {
+        return Cd.newFetchedResultsController(self.allInventoryRequest(), sectionNameKeyPath: nil, cacheName: nil)
+    }
+    
+    func ObjectsContainingText(_ text:String) -> NSFetchedResultsController<Cadmium.CdManagedObject>
+    {
+        return Cd.newFetchedResultsController(self.InventoryContainingText(text), sectionNameKeyPath: nil, cacheName: nil)
+    }
     
     //requests
     func allOrdersRequest() -> NSFetchRequest<Cadmium.CdManagedObject>
     {
         let request = NSFetchRequest<Cadmium.CdManagedObject>(entityName: "Order")
         
+        request.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        
+        return request
+    }
+    
+    func InventoryContainingText(_ text:String) -> NSFetchRequest<Cadmium.CdManagedObject>
+    {
+        let request = NSFetchRequest<Cadmium.CdManagedObject>(entityName: "Product")
+        request.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        
+        let predicate = NSPredicate(format: "fullname CONTAINS [c] %@", text)
+        request.predicate = predicate
+        
+        return request
+    }
+    
+    func InventoryRequest(_ orderID:Int16) -> NSFetchRequest<Cadmium.CdManagedObject>
+    {
+        let request = NSFetchRequest<Cadmium.CdManagedObject>(entityName: "Product")
+        request.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        
+        let predicate = NSPredicate(format: "parentOrder.identifier == %@", orderID)
+        request.predicate = predicate
+        
+        return request
+    }
+    
+    func allInventoryRequest() -> NSFetchRequest<Cadmium.CdManagedObject>
+    {
+        let request = NSFetchRequest<Cadmium.CdManagedObject>(entityName: "Product")
         request.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         
         return request

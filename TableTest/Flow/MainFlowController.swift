@@ -85,8 +85,8 @@ class MainFlowController
     let screenFactory:ScreenFactory = ScreenFactory()
     
     init(_ nav:UINavigationController, orders:OrdersTableViewController){
-        navigationController = nav
-        ordersController = orders
+//        navigationController = nav
+//        ordersController = orders
     }
 }
 

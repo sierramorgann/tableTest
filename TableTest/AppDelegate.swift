@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         {
             if let orders = nav.topViewController as? OrdersTableViewController
             {
-                flow = MainFlowController.init(nav, orders: orders)
+                flow = MainFlowController.init(nav, order: orders)
             }
         }
         

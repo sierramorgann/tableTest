@@ -21,33 +21,6 @@ class OrdersTableViewController : SlideViewController {
     public var addOrderBlock: (() -> Void)?
     public var enterOrderBlock: (() -> Void)?
     
-    
-    @IBAction func addPressed(_ sender: Any)
-    {
-        if let addOrder = addOrderBlock
-        {
-            addOrder()
-        }
-    }
-    
-    @IBAction func editButtonPressed() {
-        
-       toggleEditingMode()
-    }
-    
-    func toggleEditingMode()
-    {
-        self.tableView.isEditing = !self.tableView.isEditing
-        
-        if self.tableView.isEditing
-        {
-            editButton.title = "Done"
-            
-        } else {
-            editButton.title = "Edit"
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,16 +36,41 @@ class OrdersTableViewController : SlideViewController {
         }
         
         setUpTable()
-        
-        }
+    }
     
-        func setUpTable() {
-            self.tableView.register(UINib(nibName: "OrdersCellViewController", bundle: nil), forCellReuseIdentifier: "orders")
-            
-            self.tableView.dataSource = self
-            
-            self.tableView.delegate = self as? UITableViewDelegate
+    @IBAction func addPressed(_ sender: Any)
+    {
+        if let addOrder = addOrderBlock
+        {
+            addOrder()
         }
+    }
+    
+    @IBAction func editButtonPressed() {
+        
+        toggleEditingMode()
+    }
+    
+    func toggleEditingMode()
+    {
+        self.tableView.isEditing = !self.tableView.isEditing
+        
+        if self.tableView.isEditing
+        {
+            editButton.title = "Done"
+            
+        } else {
+            editButton.title = "Edit"
+        }
+    }
+    
+    func setUpTable() {
+        self.tableView.register(UINib(nibName: "OrdersCellViewController", bundle: nil), forCellReuseIdentifier: "order")
+        
+        self.tableView.dataSource = self
+        
+        self.tableView.delegate = self as? UITableViewDelegate
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -89,14 +87,14 @@ class OrdersTableViewController : SlideViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func configureCell(_ cell:OrdersCellViewController, orders:Order)
+    func configureCell(_ cell:OrdersCellViewController, order :Order)
     {
-        cell.titleLabel.text = orders.title
+        cell.name.text = order.name
         
-        if orders == InventoryState.sharedInstance.retrieveActiveOrder()
+        if order == InventoryState.sharedInstance.retrieveActiveOrder()
         {
             //it's possible the cell wasn't selected properly -- ensure its selection
-            if let selectedPath = self.results?.indexPath(forObject: orders as Cadmium.CdManagedObject)
+            if let selectedPath = self.results?.indexPath(forObject: order as Cadmium.CdManagedObject)
             {
                 self.tableView.selectRow(at: selectedPath, animated: false, scrollPosition: .none)
             }
@@ -114,6 +112,55 @@ extension OrdersTableViewController : UITableViewDelegate
         {
             //deleteOrderWithCell(indexPath:indexPath)
         }
+    }
+    
+    //all projects can be edited
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let orders = self.results?.object(at: indexPath) as? Order
+        {
+            InventoryState.sharedInstance.configureNewActiveProject(orders)
+            
+            if let cell = tableView.cellForRow(at: indexPath) as? OrdersCellViewController
+            {
+                if let orders = self.results?.object(at: indexPath) as? Order
+                {
+                    configureCell(cell, order: orders)
+                }
+            }
+            if let selectedPath = lastSelectedIndexPath
+            {
+                if let cell = tableView.cellForRow(at: selectedPath) as? OrdersCellViewController
+                {
+                    if let orders = self.results?.object(at: selectedPath) as? Order
+                    {
+                        configureCell(cell, order: orders)
+                    }
+                }
+            }
+            
+            PagedNavigationViewController.showReleases(true)
+            
+            
+            //            if lastSelectedIndexPath != nil
+            //            {
+            //                self.tableView.reloadRowsAtIndexPaths([indexPath, lastSelectedIndexPath!], withRowAnimation: .Fade)
+            //                lastSelectedIndexPath = nil
+            //            } else {
+            //                self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            //
+            //            }
+        }
+        
+        if let enterOrder = enterOrderBlock
+        {
+            enterOrder()
+        }
+        
     }
 }
 
